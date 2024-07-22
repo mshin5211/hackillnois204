@@ -28,13 +28,13 @@ export const fetchEvent = async () => {
 
     for (const event of events) {
         const timeOptions = {
-            timezone: 'America/Chicago',
+            timeZone: 'America/Chicago',
             hour: 'numeric',
             minute: '2-digit',
         } as const;
 
         const dateOptions = {
-            timezone: 'America/Chicago',
+            timeZone: 'America/Chicago',
             weekday: 'long',
             month: 'long',
             day: '2-digit',
