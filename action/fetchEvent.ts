@@ -39,8 +39,7 @@ export const fetchEvent = async () => {
             month: 'long',
             day: '2-digit',
         } as const;
-        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        console.log(`Your time zone is: ${timeZone}`);
+
         const timeStart = new Date(event.startTime * 1000);
         const timeEnd = new Date(event.endTime * 1000);
         const start = timeStart.toLocaleTimeString('en-US', timeOptions);
