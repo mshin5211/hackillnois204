@@ -28,7 +28,7 @@ export default function Home() {
     eventType: string;
   };
 
-  const [events, setEvent] = useState([]);
+  const [events, setEvent] = useState({} as GroupedEvents);
   const [loading, setLoading] = useState(true);
   const [activeDate, setActiveDate] = useState("");
 
@@ -76,7 +76,7 @@ export default function Home() {
         return (
           <div key={date} className='flex relative rounded-xl'>
             <div id={`event-${date}`} className='m-5 border border-white p-5 rounded-xl hidden md:max-w-[60vw] max-w-[80vw] h-96 overflow-hidden overflow-y-scroll gap-y-3 flex-col'>
-              {events[date].map((event: Event) => (
+              {(events[date] as Event[]).map((event: Event) => (
                 <EventCard key={event.eventId} {...event} />
               ))}
             </div>
